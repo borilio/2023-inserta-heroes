@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Heroe } from 'src/app/shared/models/heroe.model';
 
 @Component({
   selector: 'app-cuerpo',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CuerpoComponent {
 
-  public listadoHeroes: Array<any>;
+  public listadoHeroes: Heroe[] ;
 
   constructor() {
     this.listadoHeroes = [
@@ -109,7 +110,7 @@ export class CuerpoComponent {
         poder: 275,
         honor: 60,
         vida: 100
-      },
+      }
     ];
     //this.listadoHeroes = [];
   }
