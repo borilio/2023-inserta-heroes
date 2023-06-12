@@ -9,23 +9,6 @@ import { HeroesService } from 'src/app/shared/services/heroes.service';
 })
 export class CuerpoComponent {
 
-  public listadoHeroes: Heroe[] ;
 
-  constructor(private heroesService: HeroesService) {
-    this.listadoHeroes = [];
-  }
-
-  //Las llamadas a los servicios, no deberían de estar en el constructor.
-  ngOnInit():void {
-    this.actualizar();
-  }
-
-  public actualizar():void {
-    this.listadoHeroes = this.heroesService.getHeroes();
-  }
-
-  public hayHeroes(): boolean {
-    return this.listadoHeroes.length > 0;
-  }
 
 }
