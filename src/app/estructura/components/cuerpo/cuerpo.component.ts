@@ -20,15 +20,12 @@ export class CuerpoComponent {
     this.actualizar();
   }
 
-
   public actualizar():void {
     this.listadoHeroes = this.heroesService.getHeroes();
   }
 
-
   public hayHeroes(): boolean {
     return this.listadoHeroes.length > 0;
   }
-
 
 }
