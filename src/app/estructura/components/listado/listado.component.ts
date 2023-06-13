@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Heroe} from "../../../shared/models/heroe.model";
 import {HeroesService} from "../../../shared/services/heroes.service";
 
@@ -9,6 +9,8 @@ import {HeroesService} from "../../../shared/services/heroes.service";
 })
 export class ListadoComponent {
   public listadoHeroes: Heroe[];
+
+  @Output() public eventoFavorito: EventEmitter<Heroe> = new EventEmitter<Heroe>();
 
   constructor(private heroesService: HeroesService) {
     this.listadoHeroes = [];
@@ -25,5 +27,10 @@ export class ListadoComponent {
 
   public hayHeroes(): boolean {
     return this.listadoHeroes.length > 0;
+  }
+
+  public onSeleccionarHeroe(heroe: Heroe){
+    console.log("Vamos a emitir un evento con la información de ", heroe);
+    this.eventoFavorito.emit(heroe); // Así emitimos un evento con la información que queramos dentro
   }
 }
