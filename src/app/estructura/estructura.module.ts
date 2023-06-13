@@ -5,6 +5,7 @@ import { CuerpoComponent } from './components/cuerpo/cuerpo.component';
 import { PieComponent } from './components/pie/pie.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -17,7 +18,8 @@ import { ListadoComponent } from './components/listado/listado.component';
     ListadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     PrincipalComponent

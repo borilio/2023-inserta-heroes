@@ -9,5 +9,7 @@ export class PieComponent {
   @Input() public texto: string = "Copyright Inserta (c)";
   @Input() public year: number = new Date().getFullYear();
 
+  public actualizacion: Date = new Date();
+
 
 }

@@ -29,7 +29,7 @@
           <td [class.table-warning]="heroe.poder > 200">
             {{heroe.poder}}
           </td>
-          <td>{{heroe.honor}}</td>
+          <td>{{ heroe.honor | honor }}</td>
           <td>{{heroe.ataque}}</td>
           <td>{{heroe.defensa}}</td>
           <td>{{heroe.vida}}</td>
