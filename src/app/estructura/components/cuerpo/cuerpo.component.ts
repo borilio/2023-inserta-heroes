@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Heroe } from 'src/app/shared/models/heroe.model';
-import { HeroesService } from 'src/app/shared/services/heroes.service';
+import {Heroe} from "../../../shared/models/heroe.model";
 
 @Component({
   selector: 'app-cuerpo',

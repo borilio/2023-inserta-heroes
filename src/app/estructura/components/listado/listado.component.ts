@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {Heroe} from "../../../shared/models/heroe.model";
+
 import {HeroesService} from "../../../shared/services/heroes.service";
+import {Heroe} from "../../../shared/models/heroe.model";
 
 @Component({
   selector: 'app-listado',
