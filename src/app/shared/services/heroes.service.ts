@@ -22,7 +22,7 @@ export class HeroesService {
           defensa: 93,
           poder: 350,
           honor: 94,
-          vida: 100
+          vida: 50
         },
         {
           nombre: "Batman",

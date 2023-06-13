@@ -8,31 +8,17 @@
         <tr class="table-dark">
           <th>Imagen</th>
           <th>Nombre</th>
-          <th>Poder</th>
-          <th>Honor</th>
-          <th>Ataque</th>
-          <th>Defensa</th>
           <th>Vida</th>
         </tr>
         </thead>
         <tbody>
-        <tr (click)="onSeleccionarHeroe(heroe)" *ngFor="let heroe of listadoHeroes" [class]="
-                                    {
-                                        'table-info': heroe.honor > 70,
-                                        'table-danger' : heroe.honor < -70
-                                    }">
+        <tr (click)="onSeleccionarHeroe(heroe)" *ngFor="let heroe of listadoHeroes">
           <td>
             <img *ngIf="heroe.imagen" [src]="heroe.imagen" class="avatar" [alt]="'Avatar de ' + heroe.nombre" />
             <img *ngIf="!heroe.imagen" src="https://borilio.github.io/curso-angular/img/avatars/defaultheroe.svg" class="avatar" [alt]="'Avatar de ' + heroe.nombre" />
           </td>
           <td>{{heroe.nombre}}</td>
-          <td [class.table-warning]="heroe.poder > 200">
-            {{heroe.poder}}
-          </td>
-          <td>{{ heroe.honor | honor }}</td>
-          <td>{{heroe.ataque}}</td>
-          <td>{{heroe.defensa}}</td>
-          <td>{{heroe.vida}}</td>
+          <td>{{heroe.vida }}</td>
         </tr>
         </tbody>
       </table>

@@ -12,6 +12,7 @@ import { HonorPipe } from './pipes/honor.pipe';
   ],
   exports: [
     HonorPipe,
+    EsPoderosoPipe
   ],
   imports: [
     CommonModule

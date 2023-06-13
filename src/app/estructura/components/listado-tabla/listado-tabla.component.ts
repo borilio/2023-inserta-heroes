@@ -4,11 +4,11 @@ import {HeroesService} from "../../../shared/services/heroes.service";
 import {Heroe} from "../../../shared/models/heroe.model";
 
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
-  styleUrls: ['./listado.component.css']
+  selector: 'app-listado-tabla',
+  templateUrl: './listado-tabla.component.html',
+  styleUrls: ['./listado-tabla.component.css']
 })
-export class ListadoComponent {
+export class ListadoTablaComponent {
   public listadoHeroes: Heroe[];
 
   @Output() public eventoFavorito: EventEmitter<Heroe> = new EventEmitter<Heroe>();

@@ -9,7 +9,9 @@
       </div>
     </div>
     <div class="col-10">
-      <app-listado (eventoFavorito)="procesarEvento($event)"></app-listado>
+      <app-home></app-home>
+      <app-listado-tabla (eventoFavorito)="procesarEvento($event)"></app-listado-tabla>
+      <app-listado-tarjeta></app-listado-tarjeta>
     </div>
     <div class="col"></div>
   </div>
