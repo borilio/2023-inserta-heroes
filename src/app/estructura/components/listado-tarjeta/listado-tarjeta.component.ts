@@ -16,7 +16,7 @@ export class ListadoTarjetaComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.heroes = this.heroesService.getHeroes();
+
   }
 
 

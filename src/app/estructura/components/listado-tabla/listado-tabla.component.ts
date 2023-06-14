@@ -10,13 +10,16 @@ import {Heroe} from "../../../shared/models/heroe.model";
 })
 export class ListadoTablaComponent {
   public listadoHeroes: Heroe[];
+  public mensajeError: string;
+  public cargandoDatos: boolean;
 
   @Output() public eventoFavorito: EventEmitter<Heroe> = new EventEmitter<Heroe>();
 
   constructor(private heroesService: HeroesService) {
     console.log("ListadoTablaComponent ha sido cargado");
-    
     this.listadoHeroes = [];
+    this.cargandoDatos = false;
+    this.mensajeError = "";
   }
 
   //Las llamadas a los servicios, no deberían de estar en el constructor.
@@ -25,7 +28,22 @@ export class ListadoTablaComponent {
   }
 
   public actualizar(): void {
-    this.listadoHeroes = this.heroesService.getHeroes();
+    this.cargandoDatos = true;
+    this.heroesService.getHeroes().subscribe(
+      {
+        next: (datos : Heroe[]) => {
+          console.log("Ya han llegado los datos", datos);
+          this.listadoHeroes = datos;
+          this.cargandoDatos = false;
+        },
+        error: (datosError) => {
+          console.log("Ha habido algún error", datosError);
+          this.mensajeError = datosError.message;
+          this.cargandoDatos = false;
+        }
+      }
+    );
+
   }
 
   public hayHeroes(): boolean {
