@@ -14,6 +14,8 @@ export class ListadoTablaComponent {
   @Output() public eventoFavorito: EventEmitter<Heroe> = new EventEmitter<Heroe>();
 
   constructor(private heroesService: HeroesService) {
+    console.log("ListadoTablaComponent ha sido cargado");
+    
     this.listadoHeroes = [];
   }
 
